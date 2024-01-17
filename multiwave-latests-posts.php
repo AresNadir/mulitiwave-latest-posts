@@ -1,10 +1,10 @@
 <?php
 /**
- * Plugin Name: Latests Posts Shortcode
- * Description: Loads the latests post of the blog with load more button.
+ * Plugin Name: Multivwave Latests Posts
+ * Description: Loads the latests post of the blog.
  * Version: 1.0
- * Author: Ares Ioakimidis.
- * Author URI: https://nadir.gr
+ * Author: Eproductions.
+ * Author URI: https://eproductions.gr
  */
 
  function my_latest_posts_shortcode($atts) {
@@ -31,16 +31,11 @@
 					$output .= '<h2 class="post_title">' . get_the_title() . '</h2>';
 					$output .= '<p class="post_excerpt">' . get_the_excerpt() . '</p>';
 					$output .= '
-					<a class="read_more_btn" href="' . get_permalink() . '">
-						<div class="read-more-btn-container">
-							<span class="read_more_btn_text">
-								Read More
-							</span>
-							<span>
-								→
-							</span>
+					<a href="'. get_permalink() .'">
+						<div class="multi-btn_contianer">
+							Read more
 						</div>
-					</a>';
+			 		</a>';
 					$output .= '</div>';
 			}
 			wp_reset_postdata();
@@ -49,16 +44,12 @@
 	// Load More button
 	$output .= '</div>';
 	$output .= '
-		<a id="load-more-posts" data-page="2" data-per-page="' . $atts['posts_per_page'] . '">
-			<div class="load-more-btn-container">
-				<span class="load_more_btn_text">
-					Load More
-				</span>
-				<span>
-				+
-				</span>
-			</div>
-		</a>';
+	<a id="load-more-posts" data-page="2" data-per-page="' . $atts['posts_per_page'] . '">
+		<div class="load-more-btn_contianer">
+			Load More
+		</div>
+	 </a>';
+	
 
 	return $output;
 }
@@ -85,16 +76,11 @@ function load_more_posts() {
 					$output .= '<h2 class="post_title">' . get_the_title() . '</h2>';
 					$output .= '<p class="post_excerpt">' . get_the_excerpt() . '</p>';
 					$output .= '
-					<a class="read_more_btn" href="' . get_permalink() . '">
-						<div class="read-more-btn-container">
-							<span class="read_more_btn_text">
-								Read More
-							</span>
-							<span>
-								→
-							</span>
+					<a href="'. get_permalink() .'">
+						<div class="multi-btn_contianer">
+							Read more
 						</div>
-					</a>';
+			 		</a>';
 					$output .= '</div>';
 			}
 	}
